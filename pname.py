@@ -8,7 +8,6 @@ def givename(prom):
         "product_description": prom,
         "temperature": 0.8,
         "keywords": ""
-                    ""
     }
     headers = {"Content-Type": "application/json"}
 

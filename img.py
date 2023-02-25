@@ -7,7 +7,7 @@ def giveimg(des):
         "prompt": des,
         "height": 512,
         "width": 512,
-        "model": "stable-diffusion",
+        "model": "dall-e",
         "n_images": 1
     }
     headers = {"Content-Type": "application/json"}
