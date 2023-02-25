@@ -1,13 +1,14 @@
 import requests
-import  json
-api = "https://v1.genr.ai/api/circuit-element/generate-image"
+import json
+
 
 def giveimg(des):
+    api = "https://v1.genr.ai/api/circuit-element/generate-image"
     payload = {
         "prompt": des,
         "height": 512,
         "width": 512,
-        "model": "dall-e",
+        "model": "realistic-vision",
         "n_images": 1
     }
     headers = {"Content-Type": "application/json"}
