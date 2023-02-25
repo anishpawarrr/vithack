@@ -56,7 +56,7 @@ try:
         imgurl = giveimg(prompt)
         # st.write(imgurl)
         # st.write(prompt)
-        st.write(imgurl, unsafe_allow_html=True)
+        # st.write(imgurl, unsafe_allow_html=True)
         response = requests.get(imgurl)
         with open('inpimg.jpg', 'wb') as f:
             f.write(response.content)
@@ -71,25 +71,28 @@ try:
 
 
         #names
-        st.write("Starting namefunc")
+        # st.write("Starting namefunc")
         namelist = givename(prompt)
-        name = st.selectbox("Select name", namelist)
-        st.write(name)
-        if 'pro' not in st.session_state:
-            st.session_state['pro'] = False
-        b = st.button("Select Name")
-        if b:
-            st.session_state['pro'] = True
-        if st.session_state['pro']:
+        # name = st.selectbox("Select name", namelist)
+        st.subheader("Sugessted names ->")
+        for i in namelist:
+            st.write(i)
+        # if 'pro' not in st.session_state:
+        #     st.session_state['pro'] = False
+        # b = st.button("Select Name")
+        # if b:
+        #     st.session_state['pro'] = True
+        # if st.session_state['pro']:
             # caption
 
-            caption = givecap(imgurl)
-            st.write(caption)
+        caption = givecap(imgurl)
+        st.subheader("Caption for post ->")
+        st.write(caption)
 
-            # ad
-
-            ad = givead((prompt + ". Product name is " + name), pltfrm, audi)
-            st.write(ad)
+        # ad
+        st.subheader("Advertisement ->")
+        ad = givead(prompt, pltfrm, audi)
+        st.write(ad)
 
 
 
