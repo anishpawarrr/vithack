@@ -1,10 +1,18 @@
 import base64
 
+import requests
+from streamlit_lottie import st_lottie
 import streamlit as st
 import streamlit_option_menu as om
 from PIL import Image
 
 st.set_page_config(page_title='UltraRezNet', page_icon='bi bi-robot', layout='wide', initial_sidebar_state='expanded')
+def loadurl(url):
+    r = requests.get(url)
+    if r.status_code != 200:
+        return None
+    return r.json()
+
 
 def add_bg_from_local(image_file):
     with open(image_file, "rb") as image_file:
@@ -30,6 +38,10 @@ with c2:
 st.write('----')
 # st.write("<h1><b>Neural Ninjas</b></h1>", unsafe_allow_html=True)
 prompt = st.text_input("Enter product description")
+lot = loadurl('https://assets5.lottiefiles.com/private_files/lf30_8npirptd.json')
+c1,c2,c3 = st.columns([10,5,10])
+with c2:
+    st_lottie(lot)
 
 
 

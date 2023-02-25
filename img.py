@@ -18,7 +18,7 @@ def giveimg(des):
 
 
 
-#
+
 # prom = input("Enter prompt->")
 # payload = {
 #     "prompt": prom,
