@@ -18,4 +18,4 @@ def givename(prom):
     rlist = s.split(',')
     print(rlist)
     return rlist
-givename('donald trump riding horse')
+#givename('donald trump riding horse')
